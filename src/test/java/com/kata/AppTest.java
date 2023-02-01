@@ -1,20 +1,55 @@
 package com.kata;
 
-import static org.junit.Assert.assertTrue;
+import static org.junit.Assert.assertEquals;
+
 
 import org.junit.Test;
 
-/**
- * Unit test for simple App.
- */
 public class AppTest 
 {
-    /**
-     * Rigorous Test :-)
-     */
+
     @Test
-    public void shouldAnswerWithTrue()
+    public void should_eat()
     {
-        assertTrue( true );
+        Tamagotchi tamagochi = new Tamagotchi();
+        tamagochi.eating();
+        int hungry = tamagochi.getHunger();
+        int energy = tamagochi.getEnergy();
+        int fullness = tamagochi.getFullness();
+        assertEquals(2, hungry);
+        assertEquals(1, fullness);
+        assertEquals(5, energy);
+    }
+
+    @Test
+    public void should_play()
+    {
+        Tamagotchi tamagochi = new Tamagotchi();
+        tamagochi.playing();
+        int mood = tamagochi.getMood();
+        int energy = tamagochi.getEnergy();
+        int hunger = tamagochi.getHunger();
+        assertEquals(5, mood);
+        assertEquals(3, energy);
+        assertEquals(5, hunger);
+    }
+
+    @Test
+    public void should_sleep()
+    {
+        Tamagotchi tamagochi = new Tamagotchi();
+        tamagochi.sleeping();
+        int energy = tamagochi.getEnergy();
+        assertEquals(6, energy);
+    }
+
+    @Test
+    public void should_poop()
+    {
+        Tamagotchi tamagochi = new Tamagotchi();
+        tamagochi.eating();
+        tamagochi.poop();
+        int fullness = tamagochi.getFullness();
+        assertEquals(0, fullness);
     }
 }
