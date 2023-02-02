@@ -6,10 +6,15 @@ public class Tamagotchi {
     int hunger = 4;
     int energy = 4;
     int fullness = 0;
+    TimeDays time = new TimeDays();
     
     
     public Tamagotchi() {
-        
+
+    }
+
+    public TimeDays checking_days(){
+        return time;
     }
 
     public String checkingEnergy() {
@@ -17,7 +22,7 @@ public class Tamagotchi {
             return "(-_-)";
         }
         if(energy == 0){
-           return "(-_-)zZZ";
+            return "(-_-)zZZ";
         }
         if(energy >= 3){
             return ":-|";
