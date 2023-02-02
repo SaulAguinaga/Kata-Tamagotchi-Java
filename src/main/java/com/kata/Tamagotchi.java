@@ -12,7 +12,7 @@ public class Tamagotchi {
         
     }
 
-    private void checking() {
+    public void checking() {
         if (energy < 3 && energy > 0) {
             System.out.println("Energy: (-_-)");
         }

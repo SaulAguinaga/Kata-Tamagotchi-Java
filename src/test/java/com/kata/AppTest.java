@@ -52,4 +52,12 @@ public class AppTest
         int fullness = tamagochi.getFullness();
         assertEquals(0, fullness);
     }
+
+    @Test
+    public void should_be_tired()
+    {
+        Tamagotchi tamagotchi = new Tamagotchi();
+        tamagotchi.setEnergy(1);
+        tamagotchi.checking();
+    }
 }
