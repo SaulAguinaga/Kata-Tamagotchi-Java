@@ -58,6 +58,48 @@ public class AppTest
     {
         Tamagotchi tamagotchi = new Tamagotchi();
         tamagotchi.setEnergy(1);
-        tamagotchi.checking();
+        String result = tamagotchi.checkingEnergy();
+        assertEquals(result, "(-_-)");
     }
+    @Test
+    public void should_be_sleeped()
+    {
+        Tamagotchi tamagotchi = new Tamagotchi();
+        tamagotchi.setEnergy(0);
+        String result = tamagotchi.checkingEnergy();
+        assertEquals(result, "(-_-)zZZ");
+    }
+    @Test
+    public void should_be_normal_energy()
+    {
+        Tamagotchi tamagotchi = new Tamagotchi();
+        tamagotchi.setEnergy(3);
+        String result = tamagotchi.checkingEnergy();
+        assertEquals(result, ":-|");
+    }
+    @Test
+    public void should_be_happy()
+    {
+        Tamagotchi tamagotchi = new Tamagotchi();
+        tamagotchi.setMood(9);
+        String result = tamagotchi.checkingMood();
+        assertEquals(result, ":-)");
+    }
+    @Test
+    public void should_be_angry()
+    {
+        Tamagotchi tamagotchi = new Tamagotchi();
+        tamagotchi.setMood(1);
+        String result = tamagotchi.checkingMood();
+        assertEquals(result, "ఠ_ఠ");
+    }
+    @Test
+    public void should_be_nomral_mood()
+    {
+        Tamagotchi tamagotchi = new Tamagotchi();
+        tamagotchi.setMood(5);
+        String result = tamagotchi.checkingMood();
+        assertEquals(result, ":-|");
+    }
+    
 }
