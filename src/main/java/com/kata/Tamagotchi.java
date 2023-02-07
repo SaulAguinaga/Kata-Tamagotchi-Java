@@ -6,15 +6,10 @@ public class Tamagotchi {
     int hunger = 4;
     int energy = 4;
     int fullness = 0;
-    TimeDays time = new TimeDays();
     
     
     public Tamagotchi() {
 
-    }
-
-    public TimeDays checking_days(){
-        return time;
     }
 
     public String checkingEnergy() {
@@ -47,25 +42,25 @@ public class Tamagotchi {
         hunger -= 2;
         energy ++;
         fullness ++;
-        checkingEnergy();
-        checkingMood();
+        System.out.println(checkingEnergy());
+        System.out.println(checkingMood());
     }
     public void playing(){
         mood ++;
         hunger ++;
         energy --;
-        checkingEnergy();
-        checkingMood();
+        System.out.println(checkingEnergy());
+        System.out.println(checkingMood());
     }
     public void sleeping(){
         energy += 2;
-        checkingEnergy();
-        checkingMood();
+        System.out.println(checkingEnergy());
+        System.out.println(checkingMood());
     }
     public void poop(){
         fullness = 0;
-        checkingEnergy();
-        checkingMood();
+        System.out.println(checkingEnergy());
+        System.out.println(checkingMood());
     }
     public void status(){
         System.out.println("Tamagotchi \n mood= " + mood + "\n hunger= " + hunger + "\n energy= " + energy + "\n fullness= " + fullness + "\n");
